@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 # from models import user
 
+# sampple text
 # Create your views here.
 
 def home(request):
