@@ -1,0 +1,24 @@
+{%extends 'bus_reservations/home.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Location</title>
+</head>
+<body>
+    <h2>Add Location</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Location</button>
+    </form>
+
+    <h3>Existing Locations</h3>
+    <ul>
+        {% for location in locations %}
+            <li>{{ location.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+Requirements:
+
+DB relations
+	Route - One route can have multiple buses.
+		Start point
+		end point
+		
+	Bus - One bus can have multiple seats
+		which route
+	Seat - One seat can have only 1 booking for a specific date
+		which bus
+	Booking - One bus can have multiple bookings
+		which seat
+	Schedule -One bus can have Multiple schedule
+
+Route logic :
+display all start and end routes in drop down
+if user didn't select date, warning to select it 
+for requested start and end  route if there are no buses , display no buses
+
+
+	

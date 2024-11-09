@@ -1,0 +1,28 @@
+{%extends 'bus_reservations/home.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route</title>
+    
+</head>
+<body>
+    {% block content %}
+    {% if messages %}
+    {% for message in messages %}
+        <div>{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    <form  method="post" autocomplete="off">
+        {% csrf_token %}
+        
+        {{ form }}
+        <button type="submit">Add Route</button>
+
+    </form>
+    
+    {%endblock%}
+    
+</body>
+</html>
