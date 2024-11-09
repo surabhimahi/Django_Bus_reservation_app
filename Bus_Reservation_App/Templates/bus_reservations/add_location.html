@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Location</title>
+    <title>{%block title%}Add Location{%endblock %} </title>
 </head>
+{%block content%}
 <body>
     <h2>Add Location</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <button type="submit">Add Location</button>
     </form>
 
@@ -22,3 +23,4 @@
     </ul>
 </body>
 </html>
+{%endblock%}

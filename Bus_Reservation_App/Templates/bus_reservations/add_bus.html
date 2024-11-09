@@ -1,0 +1,32 @@
+{%extends 'bus_reservations/home.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}Add Bus{%endblock %} </title>
+</head>
+{%block content%}
+<body>
+    <h2>Add Bus</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add Bus</button>
+    </form>
+
+    <h3>Existing Bus</h3>
+    <ul>
+        {% for bus in bus %}
+            <li>Bus No: {{ bus.bus_no }}</li>
+            <li>Bus Name: {{ bus.bus_name }}</li>
+            <li>Bus Capacity: {{ bus.capacity }}</li>
+            <li></li>
+            {% comment %} <li>Bus start point: {{ bus.routes.start_route }}</li> {% endcomment %}
+            {% comment %} <li>Bus start end: {{ bus.routes_ }}</li> {% endcomment %}
+            {% comment %} <li>Bus seats: {{ bus.seats_Buses }}</li> {% endcomment %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{%endblock%}

@@ -25,6 +25,29 @@ class LocationForm(forms.ModelForm):
             user.save()
         return user
     
+class SeatForm(forms.ModelForm):
+    class Meta:
+        model = Seat
+        fields = ['seat_no', 'seat_type', 'seat_price']
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        if commit:
+            user.save()
+        return user
+    
+    
+class BusForm(forms.ModelForm):
+    class Meta:
+        model = Bus
+        fields = ['capacity', 'bus_no', 'bus_name', 'schedule', 'routes', 'seats']
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        if commit:
+            user.save()
+        return user
+    
+    
+
     
 class SignupForm(UserCreationForm):
     email = forms.EmailField(required=True)

@@ -47,8 +47,8 @@ class Bus(models.Model):
     ]
     
     schedule =models.CharField(max_length=50, choices=SCHEDULE_CHOICES, default=SCHEDULE_CHOICES[0])
-    routes = models.ManyToManyField(Route, related_name='Buses') 
-    seats = models.ManyToManyField(Seat, related_name='Buses') 
+    routes = models.ManyToManyField(Route, related_name='Buses', related_query_name="bus") 
+    seats = models.ManyToManyField(Seat, related_name='Buses', related_query_name="bus") 
     
     
     def __str__(self):

@@ -22,12 +22,38 @@ def add_location(request):
         form = LocationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('add_location')  
+            return redirect('location_view')  
     else:
         form = LocationForm()
 
     locations = Location.objects.all()
-    return render(request, 'add_location.html', {'form': form, 'locations': locations})
+    return render(request, 'bus_reservations/add_location.html', {'form': form, 'locations': locations})
+
+
+def add_bus(request):
+    if request.method == 'POST':
+        form = BusForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('bus_view')  
+    else:
+        form = BusForm()
+
+    bus = Bus.objects.all()
+    routes = bus.routes.all();
+    return render(request, 'bus_reservations/add_bus.html', {'form': form, 'bus': bus})
+
+def add_seat(request):
+    if request.method == 'POST':
+        form = SeatForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('seat_view')  
+    else:
+        form = SeatForm()
+
+    seat = Seat.objects.all()
+    return render(request, 'bus_reservations/add_seat.html', {'form': form, 'seats': seat})
  
 
 
